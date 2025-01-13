@@ -440,7 +440,7 @@ time ./gridpack_generation.sh wplustest_4f_LO cards/examples/wplustest_4f_LO loc
 ~~~bash
 mkdir work
 cd work
-tar xf ../wplustest_4f_LO_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz
+tar xf ../wplustest_4f_LO_el9_amd64_gcc11_CMSSW_13_2_9_tarball.tar.xz
 
 NEVENTS=10000
 RANDOMSEED=12345
