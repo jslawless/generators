@@ -20,7 +20,7 @@ The NanoGEN sample we've previously created contains several trees.
 You can open the file in root to explore the content, e.g.
 
 ~~~bash
-cd ~/nobackup/cmsdas_2025_gen/CMSSW_12_4_8/src; cmsenv
+cd ~/nobackup/cmsdas_2025_gen/CMSSW_13_2_9/src; cmsenv
 root -l wplustest.root
 ~~~
 {: .source}
