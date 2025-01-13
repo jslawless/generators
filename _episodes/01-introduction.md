@@ -468,7 +468,7 @@ cp /eos/uscms/store/user/cmsdas/2025/short_exercises/generators/LHEReader.py .
 > {: .source}
 {: .callout}
 ~~~bash
-cd CMSSW_12_4_8/src; cmsenv; cd -
+cd CMSSW_13_2_9/src; cmsenv; cd -
 python3.9 LHEReader.py --input MG5_aMC_v3_5_2/wplustest_4f_LO/Events/run_01/unweighted_events.lhe --output standalone.root
 python3.9 LHEReader.py --input genproductions_mg352/bin/MadGraph5_aMCatNLO/work/cmsgrid_final.lhe --output cmsgrid.root
 ~~~
