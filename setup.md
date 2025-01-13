@@ -127,7 +127,7 @@ nn23lo1    = pdlabel     ! PDF set
 ## Preparing CMSSW working area
 ~~~bash
 cd ~/nobackup/cmsdas_2025_gen
-cmsrel CMSSW_12_4_8
+cmsrel CMSSW_13_2_9
 ~~~
 {: .source}
 
