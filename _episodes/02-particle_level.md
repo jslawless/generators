@@ -34,25 +34,25 @@ In this exercise, instead of compiling Pythia8 and running it in standalone mode
 Let's first check which release version of Pythia8 we will be using.
 
 ~~~bash
-cd ~/nobackup/cmsdas_2025_gen/CMSSW_12_4_8/src
+cd ~/nobackup/cmsdas_2025_gen/CMSSW_13_2_9/src
 cmsenv
 scram tool info pythia8
 ~~~
 {: .source}
 
-You can find out that we are now using Pythia8.306 version that is already compiled in `CMSSW_12_4_8`.
+You can find out that we are now using Pythia8.309 version that is already compiled in `CMSSW_13_2_9`.
 ~~~
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Name : pythia8
-Version : 306-84a4765a9948f9c1a5e66f80618e2c6d
+Version : 309-3682aa03a0d969e762840638b179af29
 ++++++++++++++++++++
 
-INCLUDE=/cvmfs/cms.cern.ch/el8_amd64_gcc10/external/pythia8/306-84a4765a9948f9c1a5e66f80618e2c6d/include
+INCLUDE=/cvmfs/cms.cern.ch/el9_amd64_gcc11/external/pythia8/309-3682aa03a0d969e762840638b179af29/include
 LIB=pythia8
-LIBDIR=/cvmfs/cms.cern.ch/el8_amd64_gcc10/external/pythia8/306-84a4765a9948f9c1a5e66f80618e2c6d/lib
-PYTHIA8DATA=/cvmfs/cms.cern.ch/el8_amd64_gcc10/external/pythia8/306-84a4765a9948f9c1a5e66f80618e2c6d/share/Pythia8/xmldoc
-PYTHIA8_BASE=/cvmfs/cms.cern.ch/el8_amd64_gcc10/external/pythia8/306-84a4765a9948f9c1a5e66f80618e2c6d
-ROOT_INCLUDE_PATH=/cvmfs/cms.cern.ch/el8_amd64_gcc10/external/pythia8/306-84a4765a9948f9c1a5e66f80618e2c6d/include
+LIBDIR=/cvmfs/cms.cern.ch/el9_amd64_gcc11/external/pythia8/309-3682aa03a0d969e762840638b179af29/lib
+PYTHIA8DATA=/cvmfs/cms.cern.ch/el9_amd64_gcc11/external/pythia8/309-3682aa03a0d969e762840638b179af29/share/Pythia8/xmldoc
+PYTHIA8_BASE=/cvmfs/cms.cern.ch/el9_amd64_gcc11/external/pythia8/309-3682aa03a0d969e762840638b179af29
+ROOT_INCLUDE_PATH=/cvmfs/cms.cern.ch/el9_amd64_gcc11/external/pythia8/309-3682aa03a0d969e762840638b179af29/include
 SYSTEM_INCLUDE+=1
 USE=root_cxxdefaults cxxcompiler hepmc3 hepmc lhapdf
 ~~~
@@ -72,7 +72,7 @@ import FWCore.ParameterSet.Config as cms
 import os
 
 externalLHEProducer = cms.EDProducer('ExternalLHEProducer',
-    args = cms.vstring(os.getenv("HOME")+ "/nobackup/cmsdas_2025_gen/genproductions_mg352/bin/MadGraph5_aMCatNLO/wplustest_4f_LO_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz"),
+    args = cms.vstring(os.getenv("HOME")+ "/nobackup/cmsdas_2025_gen/genproductions_mg352/bin/MadGraph5_aMCatNLO/wplustest_4f_LO_el9_amd64_gcc11_CMSSW_13_2_9_tarball.tar.xz"),
     nEvents = cms.untracked.uint32(5000),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
@@ -140,16 +140,17 @@ LHE files are first produced using the gridpack we've just produced.
    ______________________________________     
          Running Generic Tarball/Gridpack     
    ______________________________________     
-gridpack tarball path = /uscms/home/enibigir/nobackup/cmsdas_2025_gen/genproductions_mg352/bin/MadGraph5_aMCatNLO/wplustest_4f_LO_el8_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz
+gridpack tarball path = /uscms/home/jlawless/nobackup/cmsdas_2025_gen/genproductions_mg352/bin/MadGraph5_aMCatNLO/wplustest_4f_LO_el9_amd64_gcc11_CMSSW_13_2_9_tarball.tar.xz
 %MSG-MG5 number of events requested = 100
 %MSG-MG5 random seed used for the run = 234567
 %MSG-MG5 thread count requested = 1
-%MSG-MG5 residual/optional arguments =
+%MSG-MG5 residual/optional arguments = 
 %MSG-MG5 number of events requested = 100
 %MSG-MG5 random seed used for the run = 234567
 %MSG-MG5 number of cpus = 1
-%MSG-MG5 SCRAM_ARCH version = el8_amd64_gcc10
-%MSG-MG5 CMSSW version = CMSSW_12_4_8
+%MSG-MG5 SCRAM_ARCH version = el9_amd64_gcc11
+%MSG-MG5 CMSSW version = CMSSW_13_2_9
+WARNING: Developer's area is created for non-production architecture el9_amd64_gcc11. Production architecture for this release is el8_amd64_gcc11
 Running MG5_aMC for the 1 time
 produced_lhe  0 nevt  100 submitting_event  100  remaining_event  100
 run.sh 100 2345670
